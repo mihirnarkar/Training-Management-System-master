@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-TrainingServerApplication<training-server>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "in.mindcraft.TrainingServerApplication",
+            "projectName": "training-server",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}

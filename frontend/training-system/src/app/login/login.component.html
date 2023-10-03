@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/@angular/material/prebuilt-themes/indigo-pink.css" rel="stylesheet">
+    
+    <style>
+        .login-input:hover {
+            transform: scale(1.1);
+        }
+
+        .login-button:hover {
+            transform: scale(1.1);
+        }
+
+        .smaller-card {
+            width: 90%; 
+            margin: 20px auto;
+        }
+
+        .header {
+            background-color: blue;
+            text-align: center;
+            padding: 10px;
+            color: white;
+        }
+
+        .footer {
+            background-color: blue;
+            text-align: center;
+            padding: 10px;
+            color: white;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: row; 
+            justify-content: center; 
+            align-items: center; 
+        }
+
+        .image {
+            text-align: center;
+            margin-right: 20px; 
+        }
+
+        
+        @media screen and (max-width: 768px) {
+            .smaller-card {
+                width: 90%;
+            }
+
+            .image img {
+                max-width: 60%; 
+                height: auto; 
+            }
+        }
+    </style>
+</head>
+<body class="mat-typography">
+    <div class="header">
+        <h1>Welcome to TMS</h1>
+    </div>
+
+    <div class="container">
+        <div fxLayout="row" fxLayoutAlign="center center" class="content">
+            <div class="image">
+                <img src="../assets/Mindcraft-Logo.png" alt="Image" width="700" height="100">
+            </div>
+            <div fxFlex="50%">
+                <mat-card class="login-card smaller-card" [@fadeInOut]> 
+                    <mat-card-header>
+                        <mat-card-title>Login</mat-card-title>
+                    </mat-card-header>
+                    <mat-card-content>
+                        <form (ngSubmit)="onSubmit()">
+                            <mat-form-field class="login-input">
+                                <mat-select matInput placeholder="Login as" [(ngModel)]="loginType" name="loginType" required
+                                  [@hovered]="isHovered('loginType')" (mouseenter)="setHovered('loginType', true)" (mouseleave)="setHovered('loginType', false)">
+                                    <mat-option value="admin">Login as Admin</mat-option>
+                                    <mat-option value="hr">Login as HR</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                            <mat-form-field class="login-input">
+                                <input matInput type="text" placeholder="Enter your username" [(ngModel)]="username" name="username" required
+                                  [@hovered]="isHovered('username')" (mouseenter)="setHovered('username', true)" (mouseleave)="setHovered('username', false)">
+                            </mat-form-field>
+                            <mat-form-field class="login-input">
+                                <input matInput type="password" placeholder="Enter your password" [(ngModel)]="password" name="password" required
+                                  [@hovered]="isHovered('password')" (mouseenter)="setHovered('password', true)" (mouseleave)="setHovered('password', false)">
+                            </mat-form-field>
+                            <button mat-raised-button color="primary" type="submit" class="login-button" 
+                              [@hovered]="isHovered('login')" (mouseenter)="setHovered('login', true)" (mouseleave)="setHovered('login', false)">
+                                Login
+                            </button>
+                        </form>
+                        <div *ngIf="errorMessage" class="error-message">
+                            {{ errorMessage }}
+                        </div>
+                        <div *ngIf="successMessage" class="success-message">
+                            {{ successMessage }}
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+    
+    <div class="footer">
+        &copy; Developed By MindCraft Software Pvt Ltd.
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular/12.2.7/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular/12.2.7/angular-animate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular/12.2.7/angular-aria.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular/12.2.7/angular-messages.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@angular/material@13.2.0/bundles/material.umd.min.js"></script>
+    
+    <script src="main.js"></script>
+</body>
+</html>
