@@ -1,0 +1,42 @@
+<div class="signup-container">
+  <a routerLink="/login">Already have an account? Login</a>
+  <br>
+  <h2 class="form-header">Signup</h2>
+  <form (ngSubmit)="onSubmit()" class="signup-form">
+    <mat-form-field class="form-field">
+      <mat-label for="employeeId">Id:</mat-label>
+      <input matInput type="number" id="employeeId" name="employeeId" [(ngModel)]="employeeId" required>
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <mat-label for="employeeFname">First Name:</mat-label>
+      <input matInput type="text" id="employeeFname" name="employeeFname" [(ngModel)]="employeeFname" required>
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <mat-label for="employeeLname">Last Name:</mat-label>
+      <input matInput type="text" id="employeeLname" name="employeeLname" [(ngModel)]="employeeLname" required>
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <mat-label for="employeeEmail">Email:</mat-label>
+      <input matInput type="email" id="employeeEmail" name="employeeEmail" [(ngModel)]="employeeEmail" required>
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <mat-label for="employeeDept">Department:</mat-label>
+      <input matInput type="text" id="employeeDept" name="employeeDept" [(ngModel)]="employeeDept" required>
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <mat-label for="employeeDesignation">Designation:</mat-label>
+      <input matInput type="text" id="employeeDesignation" name="employeeDesignation" [(ngModel)]="employeeDesignation" required>
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <mat-label for="employeeDob">Dob:</mat-label>
+      <input matInput type="date" id="employeeDob" name="employeeDob" [(ngModel)]="employeeDob" required>
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <mat-label for="employeeDoj">Doj:</mat-label>
+      <input matInput type="date" id="employeeDoj" name="employeeDoj" [(ngModel)]="employeeDoj" required>
+    </mat-form-field>
+
+    <!-- Add more form fields for other employee details here -->
+    <button mat-raised-button color="primary" type="submit" class="submit-button">Signup</button>
+  </form>
+</div>

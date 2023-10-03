@@ -14,14 +14,18 @@ import {MatInputModule} from '@angular/material/input'
 import {MatFormFieldModule} from '@angular/material/form-field'
 import {MatButtonModule} from '@angular/material/button'
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { SignupComponent } from './signup/signup.component';
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,MatButtonModule,MatCardModule,MatFormFieldModule,MatIconModule
     ,MatInputModule,MatTableModule,HttpClientModule,FormsModule,MatSelectModule
   ],

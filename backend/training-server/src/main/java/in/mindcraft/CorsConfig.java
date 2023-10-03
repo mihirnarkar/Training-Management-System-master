@@ -17,7 +17,13 @@ public class CorsConfig {
                 registry.addMapping("/login")
                         .allowedOrigins("http://localhost:4200")
                         .allowedMethods("GET", "POST")
-                        .allowCredentials(true); // If you need to include cookies in your requests
+                        .allowCredentials(true); 
+                        // If you need to include cookies in your requests
+
+                registry.addMapping("/signup")
+                        .allowedOrigins("http://localhost:4200")
+                        .allowedMethods("GET","POST")
+                        .allowCredentials(true);
             }
         };
     }

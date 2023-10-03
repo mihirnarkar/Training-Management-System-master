@@ -8,6 +8,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
+
 export class UserService {
   private loginurl = 'http://localhost:8080/login'; // Replace with your backend URL
 

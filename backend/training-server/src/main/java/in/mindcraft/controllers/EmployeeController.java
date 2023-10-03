@@ -38,7 +38,7 @@ public class EmployeeController {
     }
 
 
-    @RequestMapping(value = "/insertEmployee", method = RequestMethod.POST)
+    @RequestMapping(value = "/signup", method = RequestMethod.POST)
     public ResponseEntity<Map<String, String>> insertEmployee(@RequestBody Employee employee) {
         Map<String, String> response = (Map<String, String>) employeeService.insertEmployee(employee);
         System.out.println(response);
